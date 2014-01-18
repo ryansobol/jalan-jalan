@@ -22,6 +22,8 @@
 		920BE63E188A4F170013DF16 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 920BE622188A4F170013DF16 /* CoreData.framework */; };
 		920BE646188A4F170013DF16 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 920BE644188A4F170013DF16 /* InfoPlist.strings */; };
 		920BE648188A4F170013DF16 /* Jalan_JalanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 920BE647188A4F170013DF16 /* Jalan_JalanTests.m */; };
+		92417C1E188A516900EAA2CA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92417C1D188A516900EAA2CA /* CoreLocation.framework */; };
+		92417C21188ACE2D00EAA2CA /* JLNLocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92417C20188ACE2D00EAA2CA /* JLNLocationService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		920BE643188A4F170013DF16 /* Jalan JalanTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Jalan JalanTests-Info.plist"; sourceTree = "<group>"; };
 		920BE645188A4F170013DF16 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		920BE647188A4F170013DF16 /* Jalan_JalanTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Jalan_JalanTests.m; sourceTree = "<group>"; };
+		92417C1D188A516900EAA2CA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		92417C1F188ACE2D00EAA2CA /* JLNLocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLNLocationService.h; sourceTree = "<group>"; };
+		92417C20188ACE2D00EAA2CA /* JLNLocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNLocationService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92417C1E188A516900EAA2CA /* CoreLocation.framework in Frameworks */,
 				920BE61F188A4F170013DF16 /* CoreGraphics.framework in Frameworks */,
 				920BE623188A4F170013DF16 /* CoreData.framework in Frameworks */,
 				920BE621188A4F170013DF16 /* UIKit.framework in Frameworks */,
@@ -103,6 +109,7 @@
 		920BE61B188A4F170013DF16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92417C1D188A516900EAA2CA /* CoreLocation.framework */,
 				920BE61C188A4F170013DF16 /* Foundation.framework */,
 				920BE61E188A4F170013DF16 /* CoreGraphics.framework */,
 				920BE620188A4F170013DF16 /* UIKit.framework */,
@@ -115,10 +122,12 @@
 		920BE624188A4F170013DF16 /* Jalan Jalan */ = {
 			isa = PBXGroup;
 			children = (
-				920BE62D188A4F170013DF16 /* JLNAppDelegate.h */,
-				920BE62E188A4F170013DF16 /* JLNAppDelegate.m */,
 				920BE633188A4F170013DF16 /* Images.xcassets */,
 				920BE630188A4F170013DF16 /* Jalan_Jalan.xcdatamodeld */,
+				920BE62D188A4F170013DF16 /* JLNAppDelegate.h */,
+				920BE62E188A4F170013DF16 /* JLNAppDelegate.m */,
+				92417C1F188ACE2D00EAA2CA /* JLNLocationService.h */,
+				92417C20188ACE2D00EAA2CA /* JLNLocationService.m */,
 				920BE625188A4F170013DF16 /* Supporting Files */,
 			);
 			path = "Jalan Jalan";
@@ -201,6 +210,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Ryan Sobol";
 				TargetAttributes = {
+					920BE618188A4F170013DF16 = {
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
 					920BE638188A4F170013DF16 = {
 						TestTargetID = 920BE618188A4F170013DF16;
 					};
@@ -250,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				920BE62B188A4F170013DF16 /* main.m in Sources */,
+				92417C21188ACE2D00EAA2CA /* JLNLocationService.m in Sources */,
 				920BE632188A4F170013DF16 /* Jalan_Jalan.xcdatamodeld in Sources */,
 				920BE62F188A4F170013DF16 /* JLNAppDelegate.m in Sources */,
 			);

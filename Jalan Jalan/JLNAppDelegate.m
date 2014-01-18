@@ -6,42 +6,65 @@
 @synthesize managedObjectModel = _managedObjectModel;
 @synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
+#pragma mark - Application States
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
-    return YES;
-}
+  NSLog(@"Application state: Launch");
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-    // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-}
+  self.locationService = [[JLNLocationService alloc] init];
+  [self.locationService start];
 
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-}
+  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  self.window.backgroundColor = [UIColor whiteColor];
+  [self.window makeKeyAndVisible];
 
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
+  return YES;
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+  NSLog(@"Application state: Active");
+}
+
+- (void)applicationWillResignActive:(UIApplication *)application
+{
+  NSLog(@"Application state: Inactive");
+}
+
+- (void)applicationDidEnterBackground:(UIApplication *)application
+{
+  NSLog(@"Application state: Background");
+}
+
+- (void)applicationWillEnterForeground:(UIApplication *)application
+{
+  NSLog(@"Application state: Foreground");
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application
 {
-    // Saves changes in the application's managed object context before the application terminates.
-    [self saveContext];
+  NSLog(@"Application state: Terminate");
+
+  [self.locationService stop];
+
+  // Saves changes in the application's managed object context before the application terminates.
+  [self saveContext];
 }
+
+#pragma mark - System Notifications
+
+- (void)applicationDidReceiveMemoryWarning:(UIApplication *)application
+{
+  NSLog(@"System Notification: Memory warning");
+}
+
+- (void)applicationSignificantTimeChange:(UIApplication *)application
+{
+  NSLog(@"System Notification: Significant time change");
+}
+
+#pragma mark - Core Data stack
 
 - (void)saveContext
 {
@@ -56,8 +79,6 @@
         } 
     }
 }
-
-#pragma mark - Core Data stack
 
 // Returns the managed object context for the application.
 // If the context doesn't already exist, it is created and bound to the persistent store coordinator for the application.
