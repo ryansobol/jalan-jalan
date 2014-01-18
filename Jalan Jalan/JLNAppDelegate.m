@@ -12,12 +12,7 @@
 {
   NSLog(@"Application state: Launch");
 
-  self.locationService = [[JLNLocationService alloc] init];
-  [self.locationService start];
-
-  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-  self.window.backgroundColor = [UIColor whiteColor];
-  [self.window makeKeyAndVisible];
+  self.window.tintColor = [UIColor colorWithRed:0.557 green:0.267 blue:0.678 alpha:1.0];
 
   return YES;
 }
@@ -45,8 +40,6 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
   NSLog(@"Application state: Terminate");
-
-  [self.locationService stop];
 
   // Saves changes in the application's managed object context before the application terminates.
   [self saveContext];

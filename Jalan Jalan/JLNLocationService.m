@@ -5,6 +5,8 @@
 - (id)init
 {
   if ((self = [super init])) {
+    _journey = [[JLNJourney alloc] init];
+
     _locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate        = self;
     self.locationManager.activityType    = CLActivityTypeFitness;
@@ -14,6 +16,8 @@
 
   return self;
 }
+
+#pragma mark - Change state
 
 - (void)start
 {
@@ -70,26 +74,38 @@
 
 - (void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations
 {
-  // TODO: add location to a composite object
-  for (CLLocation *location in locations) {
-    NSLog(@"CLLocation: %@", location);
-  }
-
   if (!self.isDeferringUpdates) {
-    [self.locationManager allowDeferredLocationUpdatesUntilTraveled:CLLocationDistanceMax timeout:CLTimeIntervalMax];
+    [self.locationManager allowDeferredLocationUpdatesUntilTraveled:CLLocationDistanceMax
+                                                            timeout:CLTimeIntervalMax];
 
     self.deferringUpdates = YES;
   }
+
+  dispatch_async(dispatch_get_main_queue(), ^{
+    [self.journey addLocations:locations];
+
+    [self.delegate locationService:self journey:self.journey];
+  });
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-  NSLog(@"NSError: %@", error);
+  NSLog(@"locationManager:didFailWithError: %@", error);
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFinishDeferredUpdatesWithError:(NSError *)error
 {
-  if (error) NSLog(@"NSError: %@", error);
+  if (error) {
+    switch (error.code) {
+      case kCLErrorDeferredNotUpdatingLocation:
+        // The location manager did not enter deferred mode because location updates were already disabled or paused.
+        break;
+
+      default:
+        NSLog(@"locationManager:didFinishDeferredUpdatesWithError: %@", error);
+        break;
+    }
+  }
 
   self.deferringUpdates = NO;
 }

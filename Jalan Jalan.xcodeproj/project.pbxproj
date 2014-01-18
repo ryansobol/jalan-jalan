@@ -24,6 +24,11 @@
 		920BE648188A4F170013DF16 /* Jalan_JalanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 920BE647188A4F170013DF16 /* Jalan_JalanTests.m */; };
 		92417C1E188A516900EAA2CA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92417C1D188A516900EAA2CA /* CoreLocation.framework */; };
 		92417C21188ACE2D00EAA2CA /* JLNLocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92417C20188ACE2D00EAA2CA /* JLNLocationService.m */; };
+		92D631E7188B42D000F7B650 /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92D631E6188B42D000F7B650 /* Interface.storyboard */; };
+		92D631EA188B459C00F7B650 /* JLNMapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D631E9188B459C00F7B650 /* JLNMapViewController.m */; };
+		92D631EC188B46C800F7B650 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D631EB188B46C800F7B650 /* MapKit.framework */; };
+		92D631EF188B8CE100F7B650 /* JLNJourney.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D631EE188B8CE100F7B650 /* JLNJourney.m */; };
+		92D631F2188BBE5C00F7B650 /* JLNMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D631F1188BBE5C00F7B650 /* JLNMapView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +63,14 @@
 		92417C1D188A516900EAA2CA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		92417C1F188ACE2D00EAA2CA /* JLNLocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLNLocationService.h; sourceTree = "<group>"; };
 		92417C20188ACE2D00EAA2CA /* JLNLocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNLocationService.m; sourceTree = "<group>"; };
+		92D631E6188B42D000F7B650 /* Interface.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Interface.storyboard; sourceTree = "<group>"; };
+		92D631E8188B459C00F7B650 /* JLNMapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLNMapViewController.h; sourceTree = "<group>"; };
+		92D631E9188B459C00F7B650 /* JLNMapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNMapViewController.m; sourceTree = "<group>"; };
+		92D631EB188B46C800F7B650 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		92D631ED188B8CE100F7B650 /* JLNJourney.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLNJourney.h; sourceTree = "<group>"; };
+		92D631EE188B8CE100F7B650 /* JLNJourney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNJourney.m; sourceTree = "<group>"; };
+		92D631F0188BBE5C00F7B650 /* JLNMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLNMapView.h; sourceTree = "<group>"; };
+		92D631F1188BBE5C00F7B650 /* JLNMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNMapView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +81,9 @@
 				92417C1E188A516900EAA2CA /* CoreLocation.framework in Frameworks */,
 				920BE61F188A4F170013DF16 /* CoreGraphics.framework in Frameworks */,
 				920BE623188A4F170013DF16 /* CoreData.framework in Frameworks */,
-				920BE621188A4F170013DF16 /* UIKit.framework in Frameworks */,
 				920BE61D188A4F170013DF16 /* Foundation.framework in Frameworks */,
+				92D631EC188B46C800F7B650 /* MapKit.framework in Frameworks */,
+				920BE621188A4F170013DF16 /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,6 +123,7 @@
 		920BE61B188A4F170013DF16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				92D631EB188B46C800F7B650 /* MapKit.framework */,
 				92417C1D188A516900EAA2CA /* CoreLocation.framework */,
 				920BE61C188A4F170013DF16 /* Foundation.framework */,
 				920BE61E188A4F170013DF16 /* CoreGraphics.framework */,
@@ -123,11 +138,18 @@
 			isa = PBXGroup;
 			children = (
 				920BE633188A4F170013DF16 /* Images.xcassets */,
+				92D631E6188B42D000F7B650 /* Interface.storyboard */,
 				920BE630188A4F170013DF16 /* Jalan_Jalan.xcdatamodeld */,
 				920BE62D188A4F170013DF16 /* JLNAppDelegate.h */,
 				920BE62E188A4F170013DF16 /* JLNAppDelegate.m */,
+				92D631ED188B8CE100F7B650 /* JLNJourney.h */,
+				92D631EE188B8CE100F7B650 /* JLNJourney.m */,
 				92417C1F188ACE2D00EAA2CA /* JLNLocationService.h */,
 				92417C20188ACE2D00EAA2CA /* JLNLocationService.m */,
+				92D631F0188BBE5C00F7B650 /* JLNMapView.h */,
+				92D631F1188BBE5C00F7B650 /* JLNMapView.m */,
+				92D631E8188B459C00F7B650 /* JLNMapViewController.h */,
+				92D631E9188B459C00F7B650 /* JLNMapViewController.m */,
 				920BE625188A4F170013DF16 /* Supporting Files */,
 			);
 			path = "Jalan Jalan";
@@ -247,6 +269,7 @@
 			files = (
 				920BE629188A4F170013DF16 /* InfoPlist.strings in Resources */,
 				920BE634188A4F170013DF16 /* Images.xcassets in Resources */,
+				92D631E7188B42D000F7B650 /* Interface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +289,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				920BE62B188A4F170013DF16 /* main.m in Sources */,
+				92D631EF188B8CE100F7B650 /* JLNJourney.m in Sources */,
 				92417C21188ACE2D00EAA2CA /* JLNLocationService.m in Sources */,
 				920BE632188A4F170013DF16 /* Jalan_Jalan.xcdatamodeld in Sources */,
+				92D631F2188BBE5C00F7B650 /* JLNMapView.m in Sources */,
 				920BE62F188A4F170013DF16 /* JLNAppDelegate.m in Sources */,
+				92D631EA188B459C00F7B650 /* JLNMapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
