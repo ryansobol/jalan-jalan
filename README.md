@@ -1,6 +1,8 @@
 Jalan Jalan
 ===========
 
+![Screenshot](http://i.imgur.com/q79MstI.png)
+
 "Jalan jalan" means "Going for a walk" in Indonesian.  And coincidentally, it's the first bit of Indonesian I learned over 6 years ago.
 
 Most Indonesian people really want to communicate with foreigners. But their English is extremely limited. However, that doesn't stop them from trying!
