@@ -1,4 +1,5 @@
 #import "JLNJourney.h"
+#import "JLNModelService.h"
 
 @protocol JLNLocationServiceDelegate;
 
@@ -6,8 +7,9 @@
 
 @property (nonatomic, weak) id<JLNLocationServiceDelegate> delegate;
 
-@property (nonatomic, strong) JLNJourney *journey;
 @property (nonatomic, strong) CLLocationManager *locationManager;
+@property (nonatomic, strong) JLNModelService *modelService;
+@property (nonatomic, strong) JLNJourney *journey;
 
 @property (nonatomic, getter=isDeferringUpdates) BOOL deferringUpdates;
 

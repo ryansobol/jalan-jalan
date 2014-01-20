@@ -29,6 +29,8 @@
 		92D631EC188B46C800F7B650 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 92D631EB188B46C800F7B650 /* MapKit.framework */; };
 		92D631EF188B8CE100F7B650 /* JLNJourney.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D631EE188B8CE100F7B650 /* JLNJourney.m */; };
 		92D631F2188BBE5C00F7B650 /* JLNMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 92D631F1188BBE5C00F7B650 /* JLNMapView.m */; };
+		92E7340E188CD4A1000A68CE /* JLNModelService.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E7340D188CD4A1000A68CE /* JLNModelService.m */; };
+		92E73414188D2494000A68CE /* NSArray+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 92E73413188D2494000A68CE /* NSArray+Additions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +73,10 @@
 		92D631EE188B8CE100F7B650 /* JLNJourney.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNJourney.m; sourceTree = "<group>"; };
 		92D631F0188BBE5C00F7B650 /* JLNMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLNMapView.h; sourceTree = "<group>"; };
 		92D631F1188BBE5C00F7B650 /* JLNMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNMapView.m; sourceTree = "<group>"; };
+		92E7340C188CD4A1000A68CE /* JLNModelService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLNModelService.h; sourceTree = "<group>"; };
+		92E7340D188CD4A1000A68CE /* JLNModelService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLNModelService.m; sourceTree = "<group>"; };
+		92E73412188D2494000A68CE /* NSArray+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+Additions.h"; sourceTree = "<group>"; };
+		92E73413188D2494000A68CE /* NSArray+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+Additions.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,12 +129,12 @@
 		920BE61B188A4F170013DF16 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				92D631EB188B46C800F7B650 /* MapKit.framework */,
+				920BE622188A4F170013DF16 /* CoreData.framework */,
+				920BE61E188A4F170013DF16 /* CoreGraphics.framework */,
 				92417C1D188A516900EAA2CA /* CoreLocation.framework */,
 				920BE61C188A4F170013DF16 /* Foundation.framework */,
-				920BE61E188A4F170013DF16 /* CoreGraphics.framework */,
+				92D631EB188B46C800F7B650 /* MapKit.framework */,
 				920BE620188A4F170013DF16 /* UIKit.framework */,
-				920BE622188A4F170013DF16 /* CoreData.framework */,
 				920BE63A188A4F170013DF16 /* XCTest.framework */,
 			);
 			name = Frameworks;
@@ -150,6 +156,10 @@
 				92D631F1188BBE5C00F7B650 /* JLNMapView.m */,
 				92D631E8188B459C00F7B650 /* JLNMapViewController.h */,
 				92D631E9188B459C00F7B650 /* JLNMapViewController.m */,
+				92E7340C188CD4A1000A68CE /* JLNModelService.h */,
+				92E7340D188CD4A1000A68CE /* JLNModelService.m */,
+				92E73412188D2494000A68CE /* NSArray+Additions.h */,
+				92E73413188D2494000A68CE /* NSArray+Additions.m */,
 				920BE625188A4F170013DF16 /* Supporting Files */,
 			);
 			path = "Jalan Jalan";
@@ -289,7 +299,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				920BE62B188A4F170013DF16 /* main.m in Sources */,
+				92E73414188D2494000A68CE /* NSArray+Additions.m in Sources */,
 				92D631EF188B8CE100F7B650 /* JLNJourney.m in Sources */,
+				92E7340E188CD4A1000A68CE /* JLNModelService.m in Sources */,
 				92417C21188ACE2D00EAA2CA /* JLNLocationService.m in Sources */,
 				920BE632188A4F170013DF16 /* Jalan_Jalan.xcdatamodeld in Sources */,
 				92D631F2188BBE5C00F7B650 /* JLNMapView.m in Sources */,

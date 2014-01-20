@@ -5,13 +5,19 @@
 - (id)init
 {
   if ((self = [super init])) {
-    _journey = [[JLNJourney alloc] init];
-
     _locationManager = [[CLLocationManager alloc] init];
     self.locationManager.delegate        = self;
     self.locationManager.activityType    = CLActivityTypeFitness;
     self.locationManager.distanceFilter  = kCLDistanceFilterNone;
     self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+
+    _modelService = [[JLNModelService alloc] init];
+
+    _journey = [self.modelService fetchOrInsertJourney];
+
+    if (![self.journey.locations isEmpty]) {
+      [self.delegate locationService:self journey:self.journey];
+    }
   }
 
   return self;
@@ -31,6 +37,8 @@
   NSLog(@"JLNLocationService: Stopping");
 
   [self.locationManager stopUpdatingLocation];
+
+  [self.modelService saveContext];
 }
 
 #pragma mark - CLLocationManagerDelegate Service Notifications

@@ -2,13 +2,13 @@
 
 @implementation JLNJourney
 
-- (id)init
-{
-  if (self = [super init]) {
-    _locations = @[];
-  }
+@dynamic locations;
 
-  return self;
+- (void)awakeFromInsert
+{
+  [super awakeFromInsert];
+
+  self.locations = @[];
 }
 
 - (void)addLocations:(NSArray *)locations

@@ -1,4 +1,4 @@
-@interface JLNJourney : NSObject
+@interface JLNJourney : NSManagedObject
 
 @property (nonatomic, strong) NSArray *locations;
 
